@@ -1,0 +1,22 @@
+{
+    "movie_info": [
+        {
+            "movie_id": 25882,
+            "title": "95 and 6 to Go",
+            "poster": "https://yts.mx/assets/images/movies/95_and_6_to_go_2016/small-cover.jpg",
+            "year": 2016
+        },
+        {
+            "movie_id": 16636,
+            "title": "99 francs",
+            "poster": "https://yts.mx/assets/images/movies/99_frangia_2007/small-cover.jpg",
+            "year": 2007
+        },
+        {
+            "movie_id": 13853,
+            "title": "90 Degrees in the Shade",
+            "poster": "https://yts.mx/assets/images/movies/ninety_degrees_in_the_shade_1965/small-cover.jpg",
+            "year": 1965
+        }
+    ]
+}

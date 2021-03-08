@@ -1,0 +1,70 @@
+{
+    "movie_info": [
+        {
+            "movie_id": 25569,
+            "title": "Zero Focus",
+            "poster": "https://yts.mx/assets/images/movies/zero_no_shoten_2009/small-cover.jpg",
+            "year": 2009
+        },
+        {
+            "movie_id": 22269,
+            "title": "Zero Bridge",
+            "poster": "https://yts.mx/assets/images/movies/zero_bridge_2008/small-cover.jpg",
+            "year": 2008
+        },
+        {
+            "movie_id": 13070,
+            "title": "Zoom",
+            "poster": "https://yts.mx/assets/images/movies/zoom_2015/small-cover.jpg",
+            "year": 2015
+        },
+        {
+            "movie_id": 19175,
+            "title": "Zoey",
+            "poster": "https://yts.mx/assets/images/movies/zoey_2020/small-cover.jpg",
+            "year": 2020
+        },
+        {
+            "movie_id": 19248,
+            "title": "Zombie for Sale",
+            "poster": "https://yts.mx/assets/images/movies/zombie_for_sale_2019/small-cover.jpg",
+            "year": 2019
+        },
+        {
+            "movie_id": 23117,
+            "title": "Zwinglis Erbe",
+            "poster": "https://yts.mx/assets/images/movies/zwinglis_erbe_2018/small-cover.jpg",
+            "year": 2018
+        },
+        {
+            "movie_id": 12487,
+            "title": "Zilla and Zoe",
+            "poster": "https://yts.mx/assets/images/movies/zilla_and_zoe_2017/small-cover.jpg",
+            "year": 2017
+        },
+        {
+            "movie_id": 15244,
+            "title": "Zelary",
+            "poster": "https://yts.mx/assets/images/movies/zelary_2003/small-cover.jpg",
+            "year": 2003
+        },
+        {
+            "movie_id": 13376,
+            "title": "Zipper",
+            "poster": "https://yts.mx/assets/images/movies/zipper_2015/small-cover.jpg",
+            "year": 2015
+        },
+        {
+            "movie_id": 20633,
+            "title": "Zoo",
+            "poster": "https://yts.mx/assets/images/movies/zoo_2017/small-cover.jpg",
+            "year": 2017
+        },
+        {
+            "movie_id": 18373,
+            "title": "Zu: Warriors from the Magic Mountain",
+            "poster": "https://yts.mx/assets/images/movies/zu_warriors_from_the_magic_mountain_1983/small-cover.jpg",
+            "year": 1983
+        }
+    ]
+}
