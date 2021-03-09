@@ -13,7 +13,7 @@ $('#search-box').on('input',function(e){
   }
   else {
     $("#search-results").removeClass("no-disp");
-    $.getJSON('/search_master.json',function(data){
+    $.getJSON('/yifydb/search_master.json',function(data){
       jsonData = data.movie_info;
       //console.log(jsonData);
       var j = 0;
