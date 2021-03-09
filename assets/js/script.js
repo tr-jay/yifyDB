@@ -266,7 +266,7 @@ $(".row").append(`
               <noscript>
                   <img src="`+medium_image_url+`" width="100%">
               </noscript>
-              <div class="movie-rating"><img class="rating-star" src="/assets/img/star.svg"><div class="rating-digit">`+rating+`/10</div></div>
+              <div class="movie-rating"><img class="rating-star" src="/yifydb/assets/img/star.svg"><div class="rating-digit">`+rating+`/10</div></div>
               <div class="movie-rating pages_genre">`+genre+`</div>
       </a>
       <div class="box-info">
