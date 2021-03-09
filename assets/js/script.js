@@ -225,7 +225,7 @@ var settings = {
 "type": "GET",
 "datatype": "json",
 "async": true,
-"url" : "/home_page.json"
+"url" : "/yifydb/home_page.json"
 };
 
 $.ajax(settings).done(function (data) {
