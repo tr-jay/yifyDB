@@ -48,16 +48,16 @@ permalink: 'pages/{u}'
                 message+="""
 <article class="box-item">
   <div class="box-body">
-      <a class="cover flex-box" href="/movies/{movie_id}/{movie_name}-{year}">
+      <a class="cover flex-box" href="/yifydb/movies/{movie_id}/{movie_name}-{year}">
               <img src="{medium_img}" width="100%" class="preload">
               <noscript>
                   <img src="{medium_img}" width="100%">
               </noscript>
-              <div class="movie-rating"><img class="rating-star" src="/assets/img/star.svg"><div class="rating-digit">{rating}/10</div></div>
+              <div class="movie-rating"><img class="rating-star" src="/yifydb/assets/img/star.svg"><div class="rating-digit">{rating}/10</div></div>
               <div class="movie-rating pages_genre">{genres}</div>
       </a>
       <div class="box-info flex-box">
-          <a class="post-link" href="/movies/{movie_id}/{movie_name}-{year}">
+          <a class="post-link" href="/yifydb/movies/{movie_id}/{movie_name}-{year}">
               <h2 class="post-title">
                   {movie_name}
               </h2>

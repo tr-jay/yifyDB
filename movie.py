@@ -17,11 +17,11 @@ for n in range(num_files):
                 if 'small_cover_image' in data['movie_details']['movie']:
                     small_img = data['movie_details']['movie']['small_cover_image']
                 else:
-                    small_img = "/assets/img/small alt.jpg"
+                    small_img = "/yifydb/assets/img/small alt.jpg"
                 if 'large_cover_image' in data['movie_details']['movie']:
                     large_img = data['movie_details']['movie']['large_cover_image']
                 else:
-                    large_img = "/assets/img/large alt.jpg"
+                    large_img = "/yifydb/assets/img/large alt.jpg"
                 movie_name = data['movie_details']['movie']['title']
                 movie_title = movie_name.replace(':', '')
                 movie_title = movie_title.replace("'", "")
@@ -160,8 +160,8 @@ description: {desc_prefix}{desc}
         <h3 class="genre">{genres}</h3>
       </div>
       <a class="rating flex-box" href="https://www.imdb.com/title/{imdb_id}/?ref_=hm_tpks_tt_2_pd_tp1_cp" rel="noopener noreferrer nofollow target="_blank">
-        <img class="imdb_logo_img" src="/assets/img/IMDB_Logo.svg" alt="IMDb Rating">
-        <h3 class="rating_digit">{rating}</h3><img class="rating-star" src="/assets/img/star.svg">
+        <img class="imdb_logo_img" src="/yifydb/assets/img/IMDB_Logo.svg" alt="IMDb Rating">
+        <h3 class="rating_digit">{rating}</h3><img class="rating-star" src="/yifydb/assets/img/star.svg">
       </a>
       <div class="description">
         <h4 class="description_heading">Description</h4>

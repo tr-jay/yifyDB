@@ -1,9 +1,6 @@
 $(document).ready(function() {
 $('#search-box').on('input',function(e){
   var keycode = (e.keyCode ? e.keyCode : e.which);
-    if(keycode == '13'){
-        console.log('You pressed a "enter" key in textbox');
-    }
   $("#search-results").html("");
   var searchField = $("#search-box").val();
   var expression = new RegExp(searchField, "i");
@@ -13,7 +10,7 @@ $('#search-box').on('input',function(e){
   }
   else {
     $("#search-results").removeClass("no-disp");
-    $.getJSON('/search_master.json',function(data){
+    $.getJSON('/yifydb/search_master.json',function(data){
       jsonData = data.movie_info;
       //console.log(jsonData);
       var j = 0;
@@ -21,7 +18,6 @@ $('#search-box').on('input',function(e){
         //console.log(value.title);
         if (j < 7) {
         if(value.title.search(expression) != -1) {
-          console.log(value.movie_id);
           $("#search-results").append(`
               <li class="search_movie_block">
                   <a href="/movies/`+value.movie_id+`/`+value.title+`-`+value.year+`" class="flex-box search_movie_link">
@@ -99,7 +95,6 @@ var second_last_page = parseInt(number_of_pages) - 1;
 var third_last_page = parseInt(number_of_pages) - 2;
 var fourth_last_page = parseInt(number_of_pages) - 3;
 var fifth_last_page = parseInt(number_of_pages) - 4;
-console.log('second last: '+second_last_page);
 
 if (current_page == 1 || current_page == 2 || current_page == 3 || current_page == 4)
 {
@@ -123,7 +118,6 @@ else if (current_page == number_of_pages || current_page == second_last_page || 
 else {
   var plus_four = parseInt(current_page) + 3;
   var minus_four = parseInt(current_page) - 3;
-  console.log(plus_four);
   for (var i = current_page; i<=plus_four; i++){
     var visible_page_num = i;
     var visible_page = page.concat(visible_page_num);
@@ -142,67 +136,7 @@ else {
 function search() {
   $("#search-results").html("");
   var searchField = $("#search-box").val();
-  var expression = new RegExp(searchField, "i")
-  // var looping = jsonData.movie_info;
-  // $($(looping).get().reverse()).each(function(index){
-  // var id = this.movie_id;
-  // var title = this.title;
-  // var s_img = this.poster;
-  // var year = this.year;
-  // var txtValue, input, a, i, ul, li;
-  // var k = 1;
-  // var imgs = '<img src="`+s_img+`">'
-  // input = document.getElementById("search-box");
-  // var filter = input.value.toUpperCase();
-  // if (filter == "") {
-  //   //console.log('filter empty');
-  //   $('#search-results').addClass("no-disp");
-  //   $("li").addClass("no-disp");
-  // }
-  // else {
-  //   ul = document.getElementById("search-results");
-  //   li = ul.getElementsByTagName("li");
-  // if(k <= 1) {
-  //   $("#search-results").append(`
-  //     <li class="search_movie_block">
-  //         <a href="/movies/`+id+`" class="flex-box search_movie_link">
-  //             <img src="`+s_img+`">
-  //             <div class="search_movie_info">
-  //               <h4 class="search_movie_title">`+title+`</h4>
-  //               <p>`+year+`</p>
-  //             </div>
-  //         </a>
-  //       </li>
-  //   `);
-  //   k++;
-  // }
-  //
-  // $("li").addClass("no-disp");
-  //   var j = 0;
-  //   for (var i=0; i < li.length; i++) {
-  //     a = li[i];
-  //     var txtValue = a.innerText;
-  //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-  //       $('#search-results').removeClass("no-disp");
-  //       $("li").removeClass("no-disp");
-  //       if (j < 5){
-  //         li[i].style.display = "list-item";
-  //       }
-  //       else {
-  //         li[i].style.display = "none";
-  //       }
-  //       j++;
-  //       //console.log(j);
-  //     }
-  //     else {
-  //       li[i].style.display = "none";
-  //     }
-  //   }
-  // }
-  //
-  //
-  // });
-
+  var expression = new RegExp(searchField, "i");
 }
 
 var $temp = $("<input>");
@@ -219,13 +153,11 @@ $(".copy-link").click(function() {
 function pages(){
 window.p = 1;
 $(document).ready(function() {
-var random_page = Math.floor(Math.random() * 100);
-console.log(random_page);
 var settings = {
 "type": "GET",
 "datatype": "json",
 "async": true,
-"url" : "/home_page.json"
+"url" : "/yifydb/home_page.json"
 };
 
 $.ajax(settings).done(function (data) {
@@ -266,7 +198,7 @@ $(".row").append(`
               <noscript>
                   <img src="`+medium_image_url+`" width="100%">
               </noscript>
-              <div class="movie-rating"><img class="rating-star" src="/assets/img/star.svg"><div class="rating-digit">`+rating+`/10</div></div>
+              <div class="movie-rating"><img class="rating-star" src="/yifydb/assets/img/star.svg"><div class="rating-digit">`+rating+`/10</div></div>
               <div class="movie-rating pages_genre">`+genre+`</div>
       </a>
       <div class="box-info">
@@ -286,155 +218,10 @@ $(".row").append(`
 });
 });
 
-
-// $.getJSON('/movie_by_name/A.json',function(data){
-//   jsonData = data.movie_info;
-//   console.log(jsonData);
-  // var looping = jsonData.movie_info;
-  // $($(looping).get().reverse()).each(function(index){
-  // var id = this.movie_id;
-  // var title = this.title;
-  // var s_img = this.poster;
-  // var year = this.year;
-  // var txtValue, input, a, i, ul, li;
-  // var k = 1;
-  // var imgs = '<img src="`+s_img+`">'
-  // input = document.getElementById("search-box");
-  // var filter = input.value.toUpperCase();
-  //   ul = document.getElementById("search-results");
-  //   li = ul.getElementsByTagName("li");
-  // if(k <= 1) {
-  //   $("#search-results").append(`
-  //     <li class="search_movie_block">
-  //         <a href="/movies/`+id+`" class="flex-box search_movie_link">
-  //             <img src="`+s_img+`">
-  //             <div class="search_movie_info">
-  //               <h4 class="search_movie_title">`+title+`</h4>
-  //               <p>`+year+`</p>
-  //             </div>
-  //         </a>
-  //       </li>
-  //   `);
-  //   k++;
-  // }
-  // $("li").addClass("no-disp");
-  // }
-  // $('#search-box').on('input',function(e){
-  //   $("#search-results").html("");
-  //   var searchField = $("#search-box").val();
-  //   var expression = new RegExp(searchField, "i");
-  //   if(searchField == "")
-  //   {
-  //     $("#search-results").addClass("no-disp");
-  //   }
-  //   else {
-  //     $("#search-results").removeClass("no-disp");
-  //     $.getJSON('search_master.json',function(data){
-  //       jsonData = data.movie_info;
-  //       //console.log(jsonData);
-  //       var j = 0;
-  //       $.each(jsonData, function(key, value){
-  //         //console.log(value.title);
-  //         if (j < 5) {
-  //         if(value.title.search(expression) != -1) {
-  //           $("#search-results").append(`
-  //               <li class="search_movie_block">
-  //                   <a href="/movies/`+value.id+`" class="flex-box search_movie_link">
-  //                       <img src="`+value.poster+`">
-  //                       <div class="search_movie_info">
-  //                         <h4 class="search_movie_title">`+value.title+`</h4>
-  //                         <p>`+value.year+`</p>
-  //                       </div>
-  //                   </a>
-  //                 </li>
-  //             `);
-  //             j++;
-  //         }
-  //
-  //       }
-  //       })
-  //     });
-  //   }
-  //
-  //
-  //   //search();
-  // });
-
-//});
-
 });
 
 }
 pages();
-
-
-
-// function search(){
-//   console.log('key pressed');
-// $(document).ready(function() {
-//
-// //var looping = jsonData.movie_info;
-// $("#search-results").html("");
-// $($(looping).get().reverse()).each(function(index){
-// var id = this.movie_id;
-// var title = this.title;
-// var s_img = this.poster;
-// var year = this.year;
-// var txtValue, input, filter, a, i, ul, li;
-// var k = 1;
-// var imgs = '<img src="`+s_img+`">'
-// input = document.getElementById("search-box");
-// filter = input.value.toUpperCase();
-// if(filter == "")
-// {
-//
-// }
-// else {
-//   ul = document.getElementById("search-results");
-//   li = ul.getElementsByTagName("li");
-//
-// if(k <= 1) {
-// //  if(results <= 5) {
-//   $("#search-results").append(`
-//     <li class="search_movie_block">
-//         <a href="/movies/`+id+`" class="flex-box search_movie_link">
-//             <img src="`+s_img+`">
-//             <div class="search_movie_info">
-//               <h4 class="search_movie_title">`+title+`</h4>
-//               <p>`+year+`</p>
-//             </div>
-//         </a>
-//       </li>
-//   `);
-//     //results++;
-// //  }
-//   k++;
-// }
-//   for (i=0; i < li.length; i++) {
-//     a = li[i];
-//     txtValue = a.innerText;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//       $('#search-results').removeClass("no-disp");
-//       if (i < 5){
-//         li[i].style.display = "list-item";
-//       }
-//       else {
-//         li[i].style.display = "none";
-//       }
-//     }
-//     else {
-//       $('#search-results').addClass("no-disp");
-//       li[i].style.display = "none";
-//     }
-//   }
-// }
-//
-// });
-// // }
-// });
-// }
-
-
 
 
 
@@ -571,17 +358,3 @@ let shareData = {
         console.log('Error sharing', e)
       )
   });
-
-// $('#share_logo').on('click', () => {
-//   try {
-//     navigator.share({
-//         title: 'Web Share API Draft',
-//         text: 'Take a look at this spec!',
-//         url: 'https://developer.mozilla.org',
-//       })
-//       .then(() => console.log('Successful share'))
-//       .catch((error) => console.log('Error sharing', error));
-//   } catch(e) {
-//     console.log(e);
-//   }
-// });
