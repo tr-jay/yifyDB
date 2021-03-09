@@ -220,11 +220,12 @@ function pages(){
 window.p = 1;
 $(document).ready(function() {
 var random_page = Math.floor(Math.random() * 100);
+console.log(random_page);
 var settings = {
 "type": "GET",
 "datatype": "json",
 "async": true,
-"url" : "/json pages/page "+random_page+".json"
+"url" : "/home page.json"
 };
 
 $.ajax(settings).done(function (data) {
