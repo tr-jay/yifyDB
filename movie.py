@@ -45,7 +45,7 @@ for n in range(num_files):
                 #     print(genres)
                 rating = data['movie_details']['movie']['rating']
                 imdb_id = data['movie_details']['movie']['imdb_code']
-                desc_prefix = "Download "+movie_title+" in HD Quality. "
+                desc_prefix = "Download "+movie_title+" torrent in HD Quality. "
                 desc_prefix_len = len(desc_prefix)
                 remain_desc_size = 160 - desc_prefix_len
                 description = data['movie_details']['movie']['description_full']
