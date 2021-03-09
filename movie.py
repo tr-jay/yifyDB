@@ -58,7 +58,6 @@ for n in range(num_files):
                 desc = desc.replace('*', '')
                 desc = desc.replace('\n', '')
                 desc = desc[:remain_desc_size]
-                print(desc)
                 if 'torrents' in data['movie_details']['movie']:
                     torrents = data['movie_details']['movie']['torrents']
                     torrents_len = len(torrents)
@@ -132,10 +131,14 @@ for n in range(num_files):
                 sug_medium_cover_image = {}
                 sug_url = {}
                 sug_id = {}
+                sug_title = {}
+                sug_year = {}
                 for s in range(suggestions_len):
                     sug_medium_cover_image[s] = data['movie_suggestions']['movies'][s]['medium_cover_image']
                     sug_url[s] = data['movie_suggestions']['movies'][s]['url']
                     sug_id[s] = data['movie_suggestions']['movies'][s]['id']
+                    sug_title[s] = data['movie_suggestions']['movies'][s]['title']
+                    sug_year[s] = data['movie_suggestions']['movies'][s]['year']
                 import webbrowser
                 message="""---
 layout: default
@@ -270,10 +273,10 @@ description: {desc_prefix}{desc}
   <div class="similar_movies_container">
     <h4>Similar Movies</h4>
     <div class="similar_movies flex-box">
-      <a class="similar_movie_link" href="/movies/{sug_id[0]}"><img src="{sug_medium_cover_image[0]}"></a>
-      <a class="similar_movie_link" href="/movies/{sug_id[1]}"><img src="{sug_medium_cover_image[1]}"></a>
-      <a class="similar_movie_link" href="/movies/{sug_id[2]}"><img src="{sug_medium_cover_image[2]}"></a>
-      <a class="similar_movie_link" href="/movies/{sug_id[3]}"><img src="{sug_medium_cover_image[3]}"></a>
+      <a class="similar_movie_link" href="/yifydb/movies/{sug_id[0]}/{sug_title[0]}-{sug_year[0]}"><img src="{sug_medium_cover_image[0]}"></a>
+      <a class="similar_movie_link" href="/yifydb/movies/{sug_id[1]}/{sug_title[1]}-{sug_year[1]}"><img src="{sug_medium_cover_image[1]}"></a>
+      <a class="similar_movie_link" href="/yifydb/movies/{sug_id[2]}/{sug_title[2]}-{sug_year[2]}"><img src="{sug_medium_cover_image[2]}"></a>
+      <a class="similar_movie_link" href="/yifydb/movies/{sug_id[3]}/{sug_title[3]}-{sug_year[3]}"><img src="{sug_medium_cover_image[3]}"></a>
     </div>
   </div>
 </div>
