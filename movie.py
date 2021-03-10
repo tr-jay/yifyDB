@@ -102,7 +102,7 @@ for n in range(num_files):
                         <br>
                         <p class="quality-size">'''+ torrents_size[i] +'''</p>
                         <br>
-                        <a href="'''+ torrents_url[i] +'''" class="download_btn_main"><img class="download_logo" src="/assets/img/download-logo-white.png">Download</a>
+                        <a href="'''+ torrents_url[i] +'''" class="download_btn_main"><img class="download_logo" src="/yifydb/assets/img/download-logo-white.png">Download</a>
                         <a href="magnet:?xt=urn:btih:'''+ torrents_hash[i] +'''&dn='''+ f +''''''+ traker +'''" class="magnet-download"><img class="magnet-link" src="https://yts.mx/assets/images/website/magnet.svg"></a>
                       </div>'''
 
