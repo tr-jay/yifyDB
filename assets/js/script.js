@@ -356,11 +356,11 @@ toggle_video_modal();
 
 
 });
-
+var url = window.location.href;
 let shareData = {
-    title: 'MDN',
-    text: 'Learn web development on MDN!',
-    url: 'https://developer.mozilla.org',
+    title: 'YifyDB',
+    text: 'Download HD Movies at smallest size.',
+    url: url
   }
 
   const btn = document.querySelector('#share_logo');
