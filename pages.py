@@ -31,6 +31,13 @@ permalink: 'pages/{u}'
                 else:
                     medium_img = "/assets/img/medium alt.jpg"
                 movie_name = data['data']['movies'][i]['title']
+                movie_title = movie_name.replace(':', '')
+                movie_title = movie_title.replace("'", "")
+                movie_title = movie_title.replace('*', '')
+                movie_title = movie_title.replace('[', '')
+                movie_title = movie_title.replace('-', '')
+                movie_title = movie_title.replace(']', '')
+                movie_title = movie_title.replace('°', '')
                 movie_name = str(movie_name)
                 year = data['data']['movies'][i]['year']
                 rating = data['data']['movies'][i]['rating']
@@ -48,7 +55,7 @@ permalink: 'pages/{u}'
                 message+="""
 <article class="box-item">
   <div class="box-body">
-      <a class="cover flex-box" href="/yifydb/movies/{movie_id}/{movie_name}-{year}">
+      <a class="cover flex-box" href="/yifydb/movies/{movie_id}/{movie_title}-{year}">
               <img src="{medium_img}" width="100%" class="preload">
               <noscript>
                   <img src="{medium_img}" width="100%">
@@ -57,7 +64,7 @@ permalink: 'pages/{u}'
               <div class="movie-rating pages_genre">{genres}</div>
       </a>
       <div class="box-info flex-box">
-          <a class="post-link" href="/yifydb/movies/{movie_id}/{movie_name}-{year}">
+          <a class="post-link" href="/yifydb/movies/{movie_id}/{movie_title}-{year}">
               <h2 class="post-title">
                   {movie_name}
               </h2>

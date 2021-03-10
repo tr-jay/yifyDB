@@ -29,6 +29,7 @@ for n in range(num_files):
                 movie_title = movie_title.replace('[', '')
                 movie_title = movie_title.replace('-', '')
                 movie_title = movie_title.replace(']', '')
+                movie_title = movie_title.replace('°', '')
                 movie_name = str(movie_name)
                 year = data['movie_details']['movie']['year']
                 lan = data['movie_details']['movie']['language']
@@ -139,6 +140,13 @@ for n in range(num_files):
                     sug_id[s] = data['movie_suggestions']['movies'][s]['id']
                     sug_title[s] = data['movie_suggestions']['movies'][s]['title']
                     sug_year[s] = data['movie_suggestions']['movies'][s]['year']
+                    sug_title[s] = sug_title[s].replace(':', '')
+                    sug_title[s] = sug_title[s].replace("'", "")
+                    sug_title[s] = sug_title[s].replace('*', '')
+                    sug_title[s] = sug_title[s].replace('[', '')
+                    sug_title[s] = sug_title[s].replace('-', '')
+                    sug_title[s] = sug_title[s].replace(']', '')
+                    sug_title[s] = sug_title[s].replace('°', '')
                 import webbrowser
                 message="""---
 layout: default

@@ -18,9 +18,17 @@ $('#search-box').on('input',function(e){
         //console.log(value.title);
         if (j < 7) {
         if(value.title.search(expression) != -1) {
+          var title = value.title;
+          title = title.replace(":", "");
+          title = title.replace("'", "");
+          title = title.replace('*', '');
+          title = title.replace('[', '');
+          title = title.replace('-', '');
+          title = title.replace(']', '');
+          title = title.replace('°', '');
           $("#search-results").append(`
               <li class="search_movie_block">
-                  <a href="/movies/`+value.movie_id+`/`+value.title+`-`+value.year+`" class="flex-box search_movie_link">
+                  <a href="/yifydb/movies/`+value.movie_id+`/`+title+`-`+value.year+`" class="flex-box search_movie_link">
                       <img src="`+value.poster+`">
                       <div class="search_movie_info">
                         <h4 class="search_movie_title">`+value.title+`</h4>
@@ -55,7 +63,7 @@ window.jsonData = [];
 
 var pathname = window.location.pathname;
 var path_len = pathname.length;
-var current_page = pathname.slice(7, path_len);
+var current_page = pathname.slice(14, path_len);
 var number_of_pages=$('.page_number').length;
 $("#last_page").attr("href", number_of_pages);
 var page = 'page';
@@ -174,6 +182,14 @@ $(".row").append(`
 $($(looping).get().reverse()).each(function(index){
 var id = this.id;
 var title = this.title;
+var title_link = title;
+title_link = title_link.replace(":", "");
+title_link = title_link.replace("'", "");
+title_link = title_link.replace('*', '');
+title_link = title_link.replace('[', '');
+title_link = title_link.replace('-', '');
+title_link = title_link.replace(']', '');
+title_link = title_link.replace('°', '');
 var url = this.url;
 var medium_image_url = this.medium_cover_image;
 var year = this.year;
@@ -193,7 +209,7 @@ else {
 $(".row").append(`
 <article class="box-item">
   <div class="box-body">
-      <a class="cover flex-box" href="/movies/`+id+`/`+title+`-`+year+`">
+      <a class="cover flex-box" href="/yifydb/movies/`+id+`/`+title_link+`-`+year+`">
               <img src="`+medium_image_url+`" width="100%" class="preload">
               <noscript>
                   <img src="`+medium_image_url+`" width="100%">
@@ -202,7 +218,7 @@ $(".row").append(`
               <div class="movie-rating pages_genre">`+genre+`</div>
       </a>
       <div class="box-info">
-          <a class="post-link" href="/movies/`+id+`/`+title+`-`+year+`">
+          <a class="post-link" href="/yifydb/movies/`+id+`/`+title_link+`-`+year+`">
               <h2 class="post-title">
                   `+title+`
               </h2>
