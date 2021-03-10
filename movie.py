@@ -196,8 +196,8 @@ description: {desc_prefix}{desc}
         <h3 class="genre">{genres}</h3>
       </div>
       <div class="rating flex-box">
-        <img class="imdb_logo_img" src="/assets/img/IMDB_Logo.svg" alt="IMDb Rating">
-        <h3 class="rating_digit">{rating}</h3><img class="rating-star" src="/assets/img/star.svg">
+        <img class="imdb_logo_img" src="/yifydb/assets/img/IMDB_Logo.svg" alt="IMDb Rating">
+        <h3 class="rating_digit">{rating}</h3><img class="rating-star" src="/yifydb/assets/img/star.svg">
       </div>
     </div>
   </div>
