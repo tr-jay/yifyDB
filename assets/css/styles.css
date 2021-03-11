@@ -542,7 +542,7 @@ footer svg {
   text-decoration: none;
     color: #fff;
     background-color: rgba(251, 68, 67, .3);
-    padding: 6px;
+    padding: 2px 6px 6px;
     border-radius: 2px
 }
 
