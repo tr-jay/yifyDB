@@ -1272,6 +1272,10 @@ footer svg {
     width: 33%;
 }
 
+.movie-rating {
+  display: none !important;
+}
+
 .movie_info {
     width: 63%;
 }
