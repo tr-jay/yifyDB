@@ -106,7 +106,7 @@ for n in range(num_files):
                         <a href="magnet:?xt=urn:btih:'''+ torrents_hash[i] +'''&dn='''+ f +''''''+ traker +'''" class="magnet-download"><img class="magnet-link" src="https://yts.mx/assets/images/website/magnet.svg"></a>
                       </div>'''
 
-                    anchor_var += '<a href="magnet:?xt=urn:btih:'+ torrents_hash[i] +'&dn='+ f +''+ traker +'" class="avalable_variant">'+ torrents_quality[i] +'.'+ torrents_type[i] +'</a>'
+                    anchor_var += '<a href="magnet:?xt=urn:btih:'+ torrents_hash[i] +'&dn='+ f +''+ traker +'" class="avalable_variant"><img class="download_logo" src="/yifydb/assets/img/download-logo-white.png">'+ torrents_quality[i] +'.'+ torrents_type[i] +'</a>'
                 # print(anchor_var)
 
                 yt_trailer_code = data['movie_details']['movie']['yt_trailer_code']
